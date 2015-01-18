@@ -1,8 +1,38 @@
+
 <?php
+  session_start();
+    if (!isset($_SESSION['ID_No'])) {
+    header('Location:LogInPage.php');
+}
+
+$user=$_SESSION['ID_No'];
+
+
+
 error_reporting(0);
 if($_POST['resume'] == "Submit")
 {
 	$errorMessage = "";
+	$lastName = $_POST['lastName'];
+	$firstName = $_POST['firstName'];
+	$middleName = $_POST['middleName'];
+	$street = $_POST['street'];
+	$city = $_POST['city'];
+	$zip = $_POST['zip'];
+	$email = $_POST['email'];
+	$mobNumber = $_POST['mobNumber'];
+	$telNumber =$_POST['telNumber'];
+	$highSchool = $_POST['highSchool'];
+	$college = $_POST['college'];
+	$degree = $_POST['degree'];
+	$yearGraduated = $_POST ['yearGraduated'];
+	$awards = $_POST ['awards'];
+	$seminarsAttendded = $_POST['seminarsAttendded'];
+	$seminarsFacilitated = $_POST ['seminarsFacilitated'];
+	$extraActivities = $_POST ['extraActivities'];
+	$skills = $_POST ['skills'];
+	$experience = $_POST ['experience'];
+	
 	if(empty($_POST['lastName']))
 	{
 		$errorMessage .= "<li>Please enter your last name</li>";
@@ -83,35 +113,54 @@ if($_POST['resume'] == "Submit")
 	}
 	if(empty($errorMessage))
 	{
+	echo "$lastName";
+	echo "sdad";
+	echo "$user";
 		mysql_connect('localhost', 'root', '')
         or die(mysql_error());
-
+		
         mysql_select_db('lbas_hr') 
         or die(mysql_error());
 		
+		$sql = "UPDATE person 
+				SET L_Name = '".$lastName."', 
+					F_Name = '".$firstName."', 
+					M_Name = '".$middleName."'
+				WHERE ID_No ='".$user."'";
+				
+		$sql2 = "UPDATE resume
+				 SET Email = '".$email."',
+					 M_No = '".$mobNumber."',
+					 T_No = '".$telNumber."',
+					 City = '".$city."',
+					 Street = '".$street."',
+					 Z_Code = '".$zip."',
+					 H_School = '".$highSchool."',
+					 College = '".$college."',
+					 Course = '".$degree."',
+					 Awards = '".$awards."',
+					 S_Attended = '".$seminarsAttendded."',
+					 S_Facilitated = '".$seminarsFacilitated."',
+					 C_Activities = '".$extraActivities."'
+				 WHERE ID_No='".$user."'";
+		
+				$updatePerson = mysql_query($sql);
+				$updateResume = mysql_query($sql2);
+	
+		if ($updatePerson && $updateResume){
+				echo 'fuck yeah';
+		}
+		else {
+				echo 'fuck no';
+				
+		}
 	}
 	
-	$lastName = $_POST['lastName'];
-	$firstName = $_POST['firstName'];
-	$middleName = $_POST['middleName'];
-	$street = $_POST['street'];
-	$city = $_POST['city'];
-	$zip = $_POST['zip'];
-	$email = $_POST['email'];
-	$mobNumber = $_POST['mobNumber'];
-	$telNumber =$_POST['telNumber'];
-	$highSchool = $_POST['highSchool'];
-	$college = $_POST['college'];
-	$degree = $_POST['degree'];
-	$yearGraduated = $_POST ['yearGraduated'];
-	$awards = $_POST ['awards'];
-	$seminarsAttendded = $_POST['seminarsAttendded'];
-	$seminarsFacilitated = $_POST ['seminarsFacilitated'];
-	$extraActivities = $_POST ['extraActivities'];
-	$skills = $_POST ['skills'];
-	$experience = $_POST ['experience'];
 	
-}
+}		
+	
+
+
 
 
 ?>

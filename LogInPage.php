@@ -36,19 +36,19 @@
                 <center><h3><font face="Times new Roman">Laguna BelAir Science School</font></h3></center>
                  <center><h4><font face="Times new Roman">Human Resource Information System</font><h4></center>
             </div>
-            <form role="form">
+            <form role="form" action="CheckLogIn.php" method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Username">
+                    <input type="text" name="userName">
                 </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" name="password">
                 </div>
                 </div>
                 <hr/>
