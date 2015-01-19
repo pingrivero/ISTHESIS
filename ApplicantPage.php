@@ -190,7 +190,7 @@
                                 });
                             </script>
 
-
+                              <form action="ApplicantSubmitSched.php" method="post">
             <!--User input for Date and Time-->
             <!--Date-->           <input type="text" id="txtFromDate" placeholder="Date" name="startDate" class="selector" required/> <br/>
             <!--Start Time-->     <input id="start" value="8:00 AM" name="startTime" required/><br/>
@@ -201,6 +201,8 @@
                               </td>
                             </tr>
                           </table>
+                            <input type="submit" name="resume" value="Submit" />
+                          </form>
                         </div>
                       </div>
             </div>
