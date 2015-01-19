@@ -124,7 +124,7 @@
                   <!-- Table -->
                   <table class="table">
                     <tr>
-                        <td colspan="2"class="table-header"><center><b>Activities and Dates</b></center></td>
+                        <td colspan="2"class="table-header"><center><b>Please schedule Activities and Dates</b></center></td>
                     </tr>
 
                     <tr>
