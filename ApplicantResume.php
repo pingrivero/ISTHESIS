@@ -1,7 +1,7 @@
 <?php
   session_start();
     if (!isset($_SESSION['ID_No'])) {
-    header('Location:LogInPage.php');
+    header('Location:login.php');
 }
 
 $user=$_SESSION['ID_No'];

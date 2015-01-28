@@ -6,6 +6,7 @@
 
 $user=$_SESSION['ID_No'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,18 +60,6 @@ $user=$_SESSION['ID_No'];
         background-color: #f5f5f5;
         border-color: #ddd;
         }
-        /*
-        .well{
-          width: 60em;
-        }
-        h4{
-          text-indent: 5em;
-        }
-        li{
-          list-style-position: inside;
-          text-indent: 5em;
-        }
-        */
         
     </style>
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -101,9 +90,6 @@ $user=$_SESSION['ID_No'];
             </ul>
           </li>
         </ul>
-            <form class="navbar-search pull-right">
-              <input type="text" class="search-query" placeholder="Search">
-            </form>
           </div>
           <!--/.nav-collapse --> 
         </div>
@@ -112,29 +98,24 @@ $user=$_SESSION['ID_No'];
       <!-- /navbar-inner --> 
     </div>
     <!-- /navbar -->
-    <div class="subnavbar">
-      <div class="subnavbar-inner">
-        <div class="container">
-          <ul class="mainnav">
-            <li><a href="ApplicantPage.php"><i class="icon-home"></i><span>Home</span> </a> </li>
-            <li class="active"><a href="#"><i class="icon-list-alt"></i><span>Guidelines</span> </a> </li>
-            <li><a href="ApplicantResume.php"><i class="icon-file"></i><span>Resume</span> </a> </li>
-          </ul>
-        </div>
-        <!-- /container --> 
-      </div>
-      <!-- /subnavbar-inner --> 
-    </div>
-    <!-- /subnavbar -->
 
-    <div class= "well">
-      <h4>Applicant Guidelines</h4>    
-      <ol>
-        <li>The applicant must submit requirements ten(10) days before the interview.</li>
-        <li>Guideline #2</li>
-        <li>Guideline #3</li>
-        <li>Rest to be followed.</li>
-      </ol>
+    <center>
+    <div class="well">
+      
+      <h4>Terms and Condition</h4> <br>
+      <p width="25%">
+        The following information submitted will be only for the use of Laguna BelAir Science School's Human Resource Office.
+        The forms will be uneditable as it is submitted. 
+        This account will be temporary while the applicant is undergoing the hiring and recruitment process. 
+        Laguna BelAir Science School will have the discretion to terminate abd archive the content and the account itself.
+      </p>  
+      <form action="ApplicantResume.php" method="get">
+        <input type="checkbox"> &nbsp I Agree to the Terms and Conditions
+        <br/>
+        <br/>
+        <input type="submit">
+      </form>
     </div>
+    </center>
   </body>
 </html>

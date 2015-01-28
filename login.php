@@ -3,7 +3,7 @@
   
 <head>
     <meta charset="utf-8">
-    <title>Login - Bootstrap Admin Template</title>
+    <title>LBASS HRIS</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -34,7 +34,7 @@
 			</a>
 			
 			<a class="brand" href="index.html">
-				Bootstrap Admin Template				
+				LBASS Human Resource Information System			
 			</a>		
 			
 			<div class="nav-collapse">
@@ -72,20 +72,20 @@
 		
 		<form action="#" method="post">
 		
-			<h1>Member Login</h1>		
+			<h1>Employee Login</h1>		
 			
 			<div class="login-fields">
 				
 				<p>Please provide your details</p>
-				
+			<form role="form" action="CheckLogIn.php" method="POST">	
 				<div class="field">
 					<label for="username">Username</label>
-					<input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+					<input type="text" id="username"  value="" placeholder="Username" name="userName" class="login username-field" />
 				</div> <!-- /field -->
 				
 				<div class="field">
 					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
+					<input type="password" id="password" name="password" value="" placeholder="Password"  class="login password-field"/>
 				</div> <!-- /password -->
 				
 			</div> <!-- /login-fields -->
@@ -108,7 +108,7 @@
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
-
+</form>
 
 
 <div class="login-extra">

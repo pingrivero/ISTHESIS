@@ -1,3 +1,12 @@
+<?php
+  session_start();
+    if (!isset($_SESSION['ID_No'])) {
+    header('Location:login.php');
+}
+
+$user=$_SESSION['ID_No'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
