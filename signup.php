@@ -54,26 +54,6 @@
 
         $password=getRandomPassword();
 		
-		mysql_connect("localhost", "root", "")
-			or die(mysql_error());
-	
-		mysql_select_db("lbas_hr") 
-			or die(mysql_error());
-			
-			$insert = "INSERT INTO person (ID_No, P_Word, E_Status)
-			VALUES('". $idNo ."','". $password ."', 'Applicant')";
-
-			$result = mysql_query($insert);
-			
-			$insertResume = "INSERT INTO resume (ID_No)
-			VALUES('". $idNo ."')";
-
-			$result2 = mysql_query($insertResume);
-			
-				
-		
-		
-		
 	?>
 	<div class="navbar navbar-fixed-top">
 	
@@ -116,7 +96,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="signup.php" method="post">
+		<form action="AccountSendEmail.php" method="post">
 		
 			<h1>Generate an applicant account</h1>
 			
@@ -124,12 +104,18 @@
 				
 				<div class="field">
 					<label for="idNo">ID Number:</label>
-					ID Number: <input type="text" id="idNo" name="idNo" value="<?php echo"$idNo"?>" class="login" readonly/>
+					ID Number: <input type="text" id="idNo" name="idNo" value="<?php echo "$idNo"; ?>" class="login" readonly/>
 				</div> <!-- /field -->
 				
 				<div class="field">
 					<label for="password">Password:</label>	
-					Password: <input type="text" id="password" name="password" value="<?php echo"$password"?>" class="login" readonly/>
+					Password: <input type="text" id="password" name="password" value="<?php echo "$password" ?>" class="login" readonly/>
+				</div> <!-- /field -->
+				
+				
+				<div class="field">
+					<label for="Email">Email:</label>	
+					Email: <input type="text" id="email" name="email" value="" class="login"/>
 				</div> <!-- /field -->
 				
 				
@@ -138,7 +124,7 @@
 			<div class="login-actions">
 				
 				
-				<button class="button btn btn-primary btn-large" Align="center" button onclick="myFunction()">Generate again</button>
+				<button class="button btn btn-primary btn-large" Align="center" button onclick="myFunction()">Send</button>
 				
 			</div> <!-- .actions -->
 			
